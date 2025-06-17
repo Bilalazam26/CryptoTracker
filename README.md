@@ -57,93 +57,67 @@ This app is a practical demonstration of:
 app
 ├── core
 │   ├── data
-│   │   ├── exception
-│   │   │   ├── LocationException.kt
-│   │   │   └── NetworkException.kt
-│   │   └── utils
-│   │       ├── hasLocationPermission.kt
+│   │   └── networking
+│   │       ├── constructUrl.kt
 │   │       ├── HttpClientFactory.kt
 │   │       ├── responseToResult.kt
-│   │       ├── safeNetworkRequest.kt
-│   │       ├── toDate.kt
-│   │       └── weatherCodeToCondition.kt
+│   │       └── safeCall.kt
 │   ├── domain
-│   └── ui
-│       ├── theme
-│       │   ├── Color.kt
-│       │   ├── Shapes.kt
-│       │   ├── Theme.kt
-│       │   └── Type.kt
-│       ├── themeswitch
-│       │   ├── components
-│       │   │   ├── Clouds.kt
-│       │   │   ├── Moon.kt
-│       │   │   └── NightSkyBackground.kt
-│       │   └── ThemeSwitcher.kt
-│       └── utils
-│           └── weatherConditionToImage.kt
+│   │   └── util
+│   │       ├── Error.kt
+│   │       ├── NetworkError.kt
+│   │       └── Result.kt
+│   ├── navigation
+│   │   └── AdaptiveCoinListDetailPane.kt
+│   └── presentaion
+│       └── util
+│           ├── CoinCodeToResource.kt
+│           ├── NetworkErrorToString.kt
+│           └── ObserveAsEvents.kt
+├── crypto
+│   ├── data
+│   │   ├── dto
+│   │   │   ├── CoinDto.kt
+│   │   │   ├── CoinHistoryDto.kt
+│   │   │   ├── CoinPriceDto.kt
+│   │   │   └── CoinsResponseDto.kt
+│   │   ├── mappers
+│   │   │   └── coinMapper.kt
+│   │   └── RemoteCoinDataSource.kt
+│   ├── domain
+│   │   ├── CoinDataSource.kt
+│   │   ├── Coin.kt
+│   │   └── CoinPrice.kt
+│   └── presentaion
+│       ├── coin_details
+│       │   ├── chart
+│       │   │   ├── ChartStyle.kt
+│       │   │   ├── DataPoint.kt
+│       │   │   ├── LineChart.kt
+│       │   │   └── ValueLabel.kt
+│       │   ├── CoinDetailsScreen.kt
+│       │   └── components
+│       │       └── InfoCard.kt
+│       ├── coin_list
+│       │   ├── CoinListAction.kt
+│       │   ├── CoinListEvent.kt
+│       │   ├── CoinListScreen.kt
+│       │   ├── CoinListState.kt
+│       │   ├── CoinListViewModel.kt
+│       │   └── components
+│       │       ├── CoinListItem.kt
+│       │       └── PriceChange.kt
+│       └── models
+│           └── CoinUi.kt
+├── CryptoTrackerApp.kt
 ├── di
-│   ├── dataModule.kt
-│   ├── domainModule.kt
-│   └── uiModule.kt
+│   └── AppModule.kt
 ├── MainActivity.kt
-├── WeatherApp.kt
-└── weather_feature
-    ├── data
-    │   ├── location
-    │   │   └── GoogleLocationServiceProvider.kt
-    │   └── weather
-    │       ├── datasource
-    │       │   ├── remote
-    │       │   │   ├── dto
-    │       │   │   │   ├── CurrentWeatherDto.kt
-    │       │   │   │   ├── CurrentWeatherResponse.kt
-    │       │   │   │   ├── DailyWeatherDto.kt
-    │       │   │   │   ├── DailyWeatherResponse.kt
-    │       │   │   │   ├── HourlyWeatherDto.kt
-    │       │   │   │   └── HourlyWeatherResponse.kt
-    │       │   │   ├── mapper
-    │       │   │   │   └── WeatherMapper.kt
-    │       │   │   └── RemoteWeatherDataSource.kt
-    │       │   └── WeatherDataSource.kt
-    │       └── WeatherRepositoryImpl.kt
-    ├── domain
-    │   ├── location
-    │   │   ├── LocationProvider.kt
-    │   │   ├── model
-    │   │   │   └── LocationCoordinate.kt
-    │   │   └── usecases
-    │   │       ├── GetLocationCityUseCase.kt
-    │   │       ├── GetLocationUseCase.kt
-    │   │       └── LocationUseCases.kt
-    │   └── weather
-    │       ├── model
-    │       │   ├── CurrentWeatherData.kt
-    │       │   ├── DailyWeatherData.kt
-    │       │   └── HourlyWeatherData.kt
-    │       ├── usecases
-    │       │   ├── GetCurrentWeatherUseCase.kt
-    │       │   ├── GetDailyWeatherUseCase.kt
-    │       │   ├── GetHourlyWeatherUseCase.kt
-    │       │   └── WeatherUseCases.kt
-    │       └── WeatherRepository.kt
-    └── ui
-        └── screen
-            └── weather
-                ├── components
-                │   ├── DailyWeatherCard.kt
-                │   ├── HourlyWeatherCard.kt
-                │   ├── MinMaxTempContainer.kt
-                │   └── WeatherAttributeCard.kt
-                ├── model
-                │   └── WeatherAttribute.kt
-                ├── sections
-                │   ├── CurrentWeatherSection.kt
-                │   ├── NextWeekWeatherSection.kt
-                │   └── TodayWeatherSection.kt
-                ├── WeatherScreen.kt
-                └── WeatherViewModel.kt
-
+└── ui
+    └── theme
+        ├── Color.kt
+        ├── Theme.kt
+        └── Type.kt
 </pre>
 
 ---
